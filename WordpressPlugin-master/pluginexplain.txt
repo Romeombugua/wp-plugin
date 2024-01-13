@@ -1,0 +1,64 @@
+// use Inc\Activate; use Inc\Deactivate;  
+// use Inc\Admin\AdminPages;
+
+// if( !class_exists( 'LuisPlugin' ) ){
+//     class LuisPlugin 
+//     {
+//         public $plugin;
+
+//         function __construct(){
+//             $this->plugin =  plugin_basename( __FILE__ );
+//         }
+
+//         public function register(){ //We are adding all the actions here because is the only method that we are calling below
+//             add_action( 'admin_enqueue_scripts', array( $this, 'enqueue'));
+
+//             add_filter("plugin_action_links_$this->plugin", array( $this, 'settings_link'));//the method to create the new link and especif the unique name of your plugin
+            
+//             $adminpages = new AdminPages; //create the admin menu in wordpress and we add it at admin menu 
+
+//         }
+        
+//         public function settings_link( $links){//links is an array which content the plugin links (settings,edit,etc)
+
+//             // Add custom settings link
+//             $settings_link = '<a href="admin.php?page=luis_plugin">Settings</a>';
+//             array_push($links, $settings_link);//default wp array , new variable
+//             return $links;
+//         }
+
+//         protected function create_post_type(){
+//             add_action('init', array( $this, 'custom_post_type'));
+//         }
+
+//         function activate(){
+//             Activate::activate();//we just call the static method inside active.php(because we have the autoload) 
+//         }
+
+//         function deactivate(){
+//             Deactivate::deactivate();
+//         }
+
+//         //create a method to generate the CPT
+//         function custom_post_type(){
+//             register_post_type('book', ['public' => true, 'label' => 'Books']);//once you do this , you need to hook(init)
+//         }
+
+//         function enqueue(){
+//             //enqueue all our scripts
+//             wp_enqueue_style('mypluginstyle', plugins_url( '/assets/mystyle.css', __FILE__ ));
+//             wp_enqueue_script('mypluginscript', plugins_url( '/assets/myscript.js', __FILE__ ));
+//         } 
+//     }
+
+//     $luisPlugin = new LuisPlugin(); //store the class and initialize 
+//     $luisPlugin->register();   
+ 
+// }
+
+// /*wordpress unique methods when you created your own plugin
+//  Activation: */
+// register_activation_hook( __FILE__, array( $luisPlugin, 'activate'));//you just create the hook which include the activate method inside the main class(and this one make a require_once to the activate.php and then u just call it WITHOUT initialize the whole class inside luisPLugin-activate.php)
+
+// //Deactivation:
+// register_deactivation_hook( __FILE__, array( $luisPlugin, 'deactivate')); -->

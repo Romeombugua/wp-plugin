@@ -1,0 +1,18 @@
+{
+    "name": "luisscura/custom-luis-plugin.php",
+    "description": "Awesome starter plugin example",
+    "type": "project",
+    "license": "APACHE",
+    "authors": [
+        {
+            "name": "Luis",
+            "email": "luisfscura@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"} //php conventions, allow us to use specific php autoload,featuring,code fixer,etc.
+                                    //INC -> unique variable that we want to use every time we make reference to our plugin's folder. Then specif , the unique name which folder make references to (.inc)
+    }
+}
